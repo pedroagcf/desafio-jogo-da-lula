@@ -1,22 +1,17 @@
-import "./App.css";
-import styled from "@emotion/styled";
-import { Route, Routes } from "react-router-dom";
-import { HomePage } from "pages/HomePage";
-
-const AppContainer = styled.div`
-  background-color: #282c34;
-  min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`;
+import { Global, ThemeProvider } from "@emotion/react";
+import { MatchGameProvider } from "context/MatchGameContext";
+import { globalStyle } from "styles/global";
+import theme from "styles/theme";
+import Router from "./routes/AppRouter";
 
 const App = () => {
   return (
-    <AppContainer>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-      </Routes>
-    </AppContainer>
+    <ThemeProvider theme={theme}>
+      <MatchGameProvider>
+        <Global styles={globalStyle} />
+        <Router />
+      </MatchGameProvider>
+    </ThemeProvider>
   );
 };
 
