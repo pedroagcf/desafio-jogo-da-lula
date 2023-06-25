@@ -1,10 +1,6 @@
 import styled from "@emotion/styled";
 import theme from "styles/theme";
 
-// interface ButtonProps {
-//   backgroundColor: string
-//   isDisabled: boolean
-// }
 
 const Button = styled.button`
   font-weight: bold;
